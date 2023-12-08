@@ -4,13 +4,11 @@
 We build our secure and statically linked binaries on **Rocky Linux 9** in both *amd64* & *arm64* flavors.   Our binaries run on nicely, in bare metal, vm's, & containers, on EL9+ (including CentOS & latest Fedora releease), Ubuntu 22.04+, Deb 11, Amazon Linux 2023 and (very likely) most other recent linux distros.
 
 ## To install our CLI:
-```
-python3 -c "$(curl -fsSL https://pgedge-lab.s3.amazonaws.com/REPO/install.py)
+```python3 -c "$(curl -fsSL https://pgedge-lab.s3.amazonaws.com/REPO/install.py)```
 
-python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24.py)
+```python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24.py)```
 
-python3 -c "$(curl -fsSL https://pgedge-download.s3.amazonaws.com/REPO/install.py)
-```
+```python3 -c "$(curl -fsSL https://pgedge-download.s3.amazonaws.com/REPO/install.py)```
 
 ## Useful Notes:
 - Interested in our [CHANGELOG] (https://github.com/pgEdge/nodectl/blob/REL24_STABLE/CHANGELOG.md)
@@ -41,13 +39,15 @@ Sandbox with latest *Postgres 16* & *Spock* installed into default *postgres* db
 pgedge/ctl install pg16 --start : install spock
 ```
 
-<p>Create database *db1* owned by *denis* installing\configuring *pgedge* core components into *pg16* on *db1* database<br>
+<p>Create database *db1* owned by *denis* installing\configuring *pgedge* core components into *pg16* on *db1* database
+
 ```
 ./ctl install pgedge -U denis -P secret -d db1 --pg 16
 ```
 
 
-<p>Create a cluster `cl1` on localhost with two nodes, then install `northwind` app into `cl1`<br>
+<p>Create a cluster `cl1` on localhost with two nodes, then install `northwind` app into `cl1`
+
 ```
 ./ctl cluster localhost-create cl1 2 : cluster app-install cl1 northwind
 ```
