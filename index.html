@@ -1,0 +1,110 @@
+<head>
+<link rel="icon" type="image/x-icon" href="pgedge-32x32.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<style>
+  .navbar-light { background:rgb(234,234,234) }
+</style>
+
+<script>
+function copyToClipboard(text) {
+    var sampleTextarea = document.createElement("textarea");
+    document.body.appendChild(sampleTextarea);
+    sampleTextarea.value = text;
+    sampleTextarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(sampleTextarea);
+}
+
+function myFunction(element){
+    var copyText = document.getElementById(element);
+    copyToClipboard(copyText.value);
+}
+</script>
+
+</head>
+
+<title>pgEdge Community Lab</title>
+
+<center>
+
+<img width=725 height=75 src=pge-lab-banner1.png />
+<table width=725 border=0>
+<tr><td>
+<p>&nbsp;
+<p>Runs for X86_64 in EL8 & EL9, Ubuntu 22.04 & Suse Linux 15.5;
+for ARM64 in EL9 & Ubuntu 22.04.
+</tr></td>
+</table>
+
+<h3>Install Latest 24.x CLI</h3>
+<table border=0 bgcolor=whitesmoke width=725 style='font-size:85%'>
+<tr><td>&nbsp;</td></tr>
+<tr>
+    <td width=400><input id=latest type='text' size=80
+      value = 'python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24.py)"' readonly='readonly' />
+    </td>
+    <td width=50><button onclick="myFunction('latest')">Copy</button></td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+</table>
+
+<p>&nbsp;
+<h3>Usage Samples</h3>
+<table bgcolor=whitesmoke border=0 width=725 style='font-size:85%'>
+
+<tr><td><i>Create database 'db1' owned by user 'denis' installing spock & snowflake into 'db1'</i><br></td></tr>
+<tr><td><input size=80 value='./ctl install pgedge -U denis -P secret -d db1 --pg 16' /></td> </tr>
+
+<tr><td>&nbsp;</td></tr>
+<tr><td><i>Create a cluster 'cl1' on localhost with two nodes, then install 'northwind' app into 'cl1'</i><br></td></tr>
+<tr><td><input size=80 value='./ctl cluster localhost-create cl1 2 &nbsp;:&nbsp; cluster app-install cl1 northwind' /></td> </tr>
+
+<tr><td>&nbsp;</td></tr>
+<tr><td><i>Create cluster 'clc' in docker compose with three nodes <font color=red>(Coming Soon!)</font></i><br></td></tr>
+<tr><td><input size=80 value='./ctl cluster container-create clc 3 &nbsp;:&nbsp; cluster app-install clc pgbench' /></td> </tr>
+
+<tr><td>&nbsp;</td></tr>
+<tr><td><i>Authenticate with pgEdge Cloud credentials, then list your clusters</i><br></td></tr>
+<tr><td><input size=80 value='./ctl secure login &nbsp;:&nbsp; secure cluster-list' /></td> </tr>
+
+<tr><td>&nbsp;</td></tr>
+<tr><td><i>Create virtual machine 'n1' on AWS and virtual machine 'n2' on Equinix Metal</i><br></td></tr>
+<tr><td><input size=80 value='./ctl machine create aws n1 &nbsp;:&nbsp; machine create eqnx n2' /></td> </tr>
+
+<tr><td>&nbsp;</td></tr>
+<tr><td><i>Create a multi-cloud cluster 'mach1'<font color=red>(Coming Soon!)</font></i><br></td></tr>
+<tr><td><input size=80 value='./ctl machine cluster-create &nbsp; mach1 &nbsp; aws-n1  &nbsp; eqnx-n2' /></td> </tr>
+
+</table>
+
+<p>&nbsp;
+<h3>Notes</h3>
+<table bgcolor=whitesmoke width=725><tr><td>
+<ul>
+  <li>Interested in 
+    <a href="https://github.com/pgEdge/nodectl/blob/REL24_STABLE/CHANGELOG.md">
+	     what's changing </a><br>&nbsp;
+  </li>
+  <li>Install as a non-root user from your $HOME directory</li>
+  <ul>
+    <li>configure <a href="https://blog.pgedge.org/index.php/2023/04/07/passwordless-sudo/">
+          passwordless sudo</a> for simpler testing of advanced commands
+    </li>
+    <li>set up <a href="https://blog.pgedge.org/index.php/2023/06/07/passwordless-ssh-to-localhost-2/">
+          passwordless ssh to localhost</a> for using <code>cluster local-create </code> command
+        <br>&nbsp;
+    </li>
+  </ul>
+  <li>Runs w/ Python 3.9 on EL8 & EL9; Python 3.10 on Ubuntu 22.04<br>&nbsp;</li>
+  <li>Learn about running <a href=https://www.pgedge.com/products/pgedge-platform>pgEdge Platform</a>
+	  in production and/or for professional grade support.<br>&nbsp;</li>
+  <li>Denis' <a href=https://blog.pgedge.org>Linux Cheatsheet</a><br>&nbsp;</l1>
+  <li><a href=https://www.pgedge.com/communitylicense>pgEdge Community License 1.0</a></li>
+</ul>
+</td></tr>
+</table>
+
+</center>

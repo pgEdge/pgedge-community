@@ -1,10 +1,9 @@
 
 # pgEdge Community Lab
 
-We build our secure and statically linked binaries on **Rocky Linux 9** in both *amd64* & *arm64* flavors.   Our binaries run on nicely, in bare metal, vm's, & containers, on EL9+ (including CentOS & latest Fedora releease), Ubuntu 22.04+, Deb 11, Amazon Linux 2023 and (very likely) most other recent linux distros.
+We build our secure and statically linked binaries on Rocky Linux 8 & 9 for *x86_64* & and on Rocky Linux 9 for *arm64*.   Our binaries run on nicely, in bare metal, vm's, & containers.  We are tested to run on EL8, EL9, SLES-15 & AWS Linux 2023, and Ubuntu 22.04.
 
 ## To install our CLI:
-```python3 -c "$(curl -fsSL https://pgedge-lab.s3.amazonaws.com/REPO/install.py)```
 
 ```python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24.py)```
 
@@ -19,10 +18,9 @@ We build our secure and statically linked binaries on **Rocky Linux 9** in both 
 
 - set up [password-less ssh to localhost] (https://blog.pgedge.org/index.php/2023/06/07/passwordless-ssh-to-localhost-2) for using `cluster localhost` commands
 
-- Tested w python39, on EL9 & Ubu22, for pg14/15/16 
-	  (including [Spock Multi-Master] (https://github.com/pgEdge/spock/#spock>Spock Multi-master) capabilities)
+- Tested with Python 3.9 on EL8, EL9, SLE-15, & Amazon inux 2023
 
-- Tested w python36, on EL8 & Ubu20, for core pg12/13/14/15 basics
+- Tested with Python 3.10 on Ubuntu 22.04
 
 - Learn about running [pgEdge Platform] (https://www.pgedge.com/products/pgedge-platform) in production and/or for professional grade support
 
