@@ -33,19 +33,19 @@ We build our enterprise-class, secure and statically linked binaries on Rocky Li
 
 ## Usage Samples:
 
-Sandbox with latest *Postgres 16* & *Spock* installed into default *postgres* db<br>
+Sandbox with latest *Postgres 16*, *Spock* & *Snowflake* installed into default *postgres* db<br>
 ```
-pgedge/ctl install pg16 --start : install spock
+./ctl install pg16 --start : install spock : install snowflake
 ```
 
-<p>Create database *db1* owned by *denis* installing\configuring *pgedge* core components (*Spock* & *Snowflake*) into *pg16* on *db1* database
+<p>Create db *db1* owned by *denis* installing & configuring *pgedge* core components (*Spock* & *Snowflake*) into *pg16*
 
 ```
 ./ctl install pgedge -U denis -P secret -d db1 --pg 16
 ```
 
 
-<p>Create a cluster `cl1` on localhost with two nodes, then install `northwind` app into `cl1`
+<p>Create a cluster `cl1` on localhost with two nodes, then install `northwind sample app` into `cl1`
 
 ```
 ./ctl cluster localhost-create cl1 2 : cluster app-install cl1 northwind
