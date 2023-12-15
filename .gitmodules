@@ -1,0 +1,9 @@
+[submodule "spock"]
+	path = spock
+	url = https://github.com/pgedge/spock
+[submodule "nodectl"]
+	path = nodectl
+	url = https://github.com/pgedge/nodectl
+[submodule "snowflake"]
+	path = snowflake
+	url = https://github.com/pgedge/snowflake
