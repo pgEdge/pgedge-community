@@ -5,7 +5,9 @@ We build our enterprise-class, secure and statically linked binaries on Rocky Li
 
 ## To install our Latest 24.1.x CLI:
 
-```python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24.py)```
+```
+python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24.py)
+```
 
 
 ## Useful Notes:
@@ -38,35 +40,35 @@ Sandbox with latest *Postgres 16*, *Spock* & *Snowflake* installed into default 
 ./ctl install pg16 --start : install spock : install snowflake
 ```
 
-<p>Create db *db1* owned by *denis* installing & configuring *pgedge* core components (*Spock* & *Snowflake*) into *pg16*
+Create db *db1* owned by *denis* installing & configuring *pgedge* core components (*Spock* & *Snowflake*) into *pg16*
 
 ```
 ./ctl install pgedge -U denis -P secret -d db1 --pg 16
 ```
 
 
-<p>Create a cluster `cl1` on localhost with two nodes, then install `northwind sample app` into `cl1`
+Create a cluster *cl1* on localhost with two nodes, then install *northwind sample app* on *cl1* cluster
 
 ```
 ./ctl cluster localhost-create cl1 2 : cluster app-install cl1 northwind
 ```
 
-<p>Create cluster 'clc' in docker compose with three nodes (*Coming Soon!*)<br>
+Create cluster *clc* in docker compose with three nodes (*Coming Soon!*)
 ```
 ./ctl cluster container-create clc 3 : cluster app-install clc pgbench
 ```
 
-<p>Authenticate withe pgEdge Cloud credentials, then list your clusters<br>
+Authenticate withe pgEdge Cloud credentials, then list your clusters
 ```
 ./ctl secure login : secure cluster-list
 ```
 
-<p>Create virtual machine 'n1' on **AWS** and virtual machine 'n2' on **Equinix Metal**<br>
+Create virtual machine *n1* on **AWS** and virtual machine *n2* on **Equinix Metal**
 ```
 ./ctl machine create aws n1 : machine create eqnx n2
 ```
 
-<p>Create a multi-cloud cluster 'mach1' (*Coming Soon!*)<br>
+Create a multi-cloud cluster *mach1* (**Coming Soon!**)
 ```
 ./ctl machine cluster-create mach1 aws-n1 eqnx-n2
 ```
