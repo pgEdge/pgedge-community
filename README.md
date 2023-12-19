@@ -14,13 +14,13 @@ python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24
 [CLI Documentation](https://github.com/pgedge/nodectl/blob/REL24_STABLE/cli/README.md)
 
 # Useful Notes:
-- Interested in our [CHANGELOG] (https://github.com/pgEdge/nodectl/blob/REL24_STABLE/CHANGELOG.md)
+- Interested in our [CHANGELOG](https://github.com/pgEdge/nodectl/blob/REL24_STABLE/CHANGELOG.md)
 
 - Install as a non-root user from your `$HOME` directory
 
-- configure [password-less sudo] (https://blog.pgedge.org/index.php/2023/04/07/passwordless-sudo/) for easier testing of advanced commands
+- configure [password-less sudo](https://blog.pgedge.org/index.php/2023/04/07/passwordless-sudo/) for easier testing of advanced commands
 
-- set up [password-less ssh to localhost] (https://blog.pgedge.org/index.php/2023/06/07/passwordless-ssh-to-localhost-2) for using `cluster localhost` commands
+- set up [password-less ssh to localhost](https://blog.pgedge.org/index.php/2023/06/07/passwordless-ssh-to-localhost-2) for using `cluster localhost` commands
 
 - Tested with Python 3.9+ 
   - Python 3.9 on EL8, EL9, SLE-15, & Amazon Linux 2023
@@ -28,11 +28,11 @@ python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24
   - Python 3.11 on Ubuntu 23.10
   - Python 3.12 on Fedora 39
 
-- Learn about running [pgEdge Platform] (https://www.pgedge.com/products/pgedge-platform) in production and/or for professional grade support
+- Learn about running [pgEdge Platform](https://www.pgedge.com/products/pgedge-platform) in production and/or for professional grade support
 
-- Denis' [Linux Cheatsheet] (https://blog.pgedge.org)
+- Denis' [Linux Cheatsheet](https://blog.pgedge.org)
 
-- pgedge [Community License] (https://www.pgedge.com/communitylicense>pgEdge Community License 1.0)
+- pgedge [Community License](https://www.pgedge.com/communitylicense>pgEdge Community License 1.0)
 
 
 
