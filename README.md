@@ -11,7 +11,7 @@ python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24
 
 [Useful Notes](#useful-notes)<br>
 [Usage Samples](#usage-samples)<br>
-[CLI documentation](spock/cli/README.md)
+[CLI Documentation](nodectl/blob/REL24_STABLE/cli/README.md)
 
 # Useful Notes:
 - Interested in our [CHANGELOG] (https://github.com/pgEdge/nodectl/blob/REL24_STABLE/CHANGELOG.md)
