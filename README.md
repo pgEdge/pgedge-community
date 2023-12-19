@@ -9,7 +9,8 @@ We build our enterprise-class, secure and statically linked binaries on Rocky Li
 python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24.py)
 ```
 
-[Useful Notes](#usefulnotes)
+[Useful Notes](#useful-notes)<br>
+[Usage Samples](#usage-samples)
 
 # Useful Notes:
 - Interested in our [CHANGELOG] (https://github.com/pgEdge/nodectl/blob/REL24_STABLE/CHANGELOG.md)
