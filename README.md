@@ -1,12 +1,12 @@
 
 ![# pgEdge Community Lab](img/community-lab-banner.png)
 
-We build our enterprise-class, secure and statically linked binaries on Rocky Linux 8 & 9 for *x86_64* & and on Rocky Linux 9 for *arm64*.   Our binaries run nicely on bare metal, vm's, containers or a localhost sandbox on your laptop.  We are tested to run on EL8, EL9, SLES-15, AWS Linux 2023, and Ubuntu 22.04.
+We build our enterprise-class, secure and multi-platform binaries on Rocky Linux 8 & 9 for *x86_64*; and on Rocky Linux 9 for *arm64*.   Our binaries run nicely on bare metal, vm's, containers or a localhost sandbox on your laptop.  In addition to EL8 & EL9; we are also tested to run on Ubuntu 22.04, SLES-15 & AWS Linux 2023.
 
-# To install our Latest 24.x CLI:
+# To install our Latest CLI:
 
 ```
-python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24.py)"
+python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install.py)"
 ```
 
 [Useful Notes](#useful-notes)<br>
@@ -20,10 +20,10 @@ python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24
 
 - configure [password-less sudo](https://blog.pgedge.org/index.php/2023/04/07/passwordless-sudo/) for easier testing of advanced commands
 
-- set up [password-less ssh to localhost](https://blog.pgedge.org/index.php/2023/06/07/passwordless-ssh-to-localhost-2) for using `cluster localhost` commands
+- set up [password-less ssh to localhost](https://blog.pgedge.org/index.php/2023/06/07/passwordless-ssh-to-localhost-2) for using `cluster local-create` commands
 
 - Tested with Python 3.9+ 
-  - Python 3.9 on EL8, EL9, SLE-15, & Amazon Linux 2023
+  - Python 3.9 on EL8, EL9, SLE-15, & AWS Linux 2023 (on EL8 & SLES-15 you must install python39)
   - Python 3.10 on Ubuntu 22.04
   - Python 3.12 on Fedora 39 & OSX
 
@@ -76,7 +76,7 @@ Create virtual machine *n1* on AWS in Northern Virgina (iad) and *n2* VM on Equi
 ./ctl multicloud node-create aws iad n1 : multicloud node-create eqn pdx n2
 ```
 
-Create a JSOn file for a hybrid multicloud cluster *my-cluster* with two nodes *n1* & *n2* created above (**Coming Soon!**)
+Create a JSON file for defining a hybrid multicloud cluster *my-cluster* with two nodes *n1* & *n2* created above (**Coming Soon!**)
 ```
 ./ctl multicloud cluster-define my-cluster "aws:iad:n1" "eqn:pdx:n2"
 ```
