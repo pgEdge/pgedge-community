@@ -3,7 +3,7 @@
 
 We build our enterprise-class, secure and statically linked binaries on Rocky Linux 8 & 9 for *x86_64* & and on Rocky Linux 9 for *arm64*.   Our binaries run nicely on bare metal, vm's, containers or a localhost sandbox on your laptop.  We are tested to run on EL8, EL9, SLES-15, AWS Linux 2023, and Ubuntu 22.04.
 
-# To install our Latest 24.1.x CLI:
+# To install our Latest 24.x CLI:
 
 ```
 python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24.py)"
@@ -25,8 +25,7 @@ python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install24
 - Tested with Python 3.9+ 
   - Python 3.9 on EL8, EL9, SLE-15, & Amazon Linux 2023
   - Python 3.10 on Ubuntu 22.04
-  - Python 3.11 on Ubuntu 23.10
-  - Python 3.12 on Fedora 39
+  - Python 3.12 on Fedora 39 & OSX
 
 - Learn about running [pgEdge Platform](https://www.pgedge.com/products/pgedge-platform) in production and/or for professional grade support
 
@@ -49,29 +48,35 @@ Create db *db1* owned by *denis* installing & configuring *pgedge* core componen
 ./ctl install pgedge -U denis -P secret -d db1 --pg 16
 ```
 
+If you first shut off SE-Linux, you can install & run pgEdge in AutoStart mode (using systemd) on a VM or Metal
+
+```
+./ctl install pgedge -U denis -P secret -d dbauto --pg 15 --autostart
+```
+
 
 Create a cluster *cl1* on localhost with two nodes, then install *northwind sample app* on *cl1* cluster
 
 ```
-./ctl cluster localhost-create cl1 2 : cluster app-install cl1 northwind
+./ctl cluster local-create cl1 2 : cluster app-install cl1 northwind
 ```
 
-Create cluster *clc* in docker compose with three nodes (*Coming Soon!*)
+Create cluster *clc* in docker compose with three nodes (**Coming Soon!**)
 ```
 ./ctl cluster container-create clc 3 : cluster app-install clc pgbench
 ```
 
-Authenticate withe pgEdge Cloud credentials, then list your clusters
+Authenticate with pgEdge Cloud credentials, then list your clusters
 ```
 ./ctl secure login : secure cluster-list
 ```
 
-Create virtual machine *n1* on **AWS** and virtual machine *n2* on **Equinix Metal**
+Create virtual machine *n1* on AWS in Northern Virgina (iad) and *n2* VM on EquinixMetal in Portland (pdx)
 ```
-./ctl machine create aws n1 : machine create eqnx n2
+./ctl multicloud node-create aws iad n1 : multicloud node-create eqn pdx n2
 ```
 
-Create a multi-cloud cluster *mach1* (**Coming Soon!**)
+Create a JSOn file for a hybrid multicloud cluster *my-cluster* with two nodes *n1* & *n2* created above (**Coming Soon!**)
 ```
-./ctl machine cluster-create mach1 aws-n1 eqnx-n2
+./ctl multicloud cluster-define my-cluster "aws:iad:n1" "eqn:pdx:n2"
 ```
