@@ -18,9 +18,9 @@ python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install.p
 
 - Install as a non-root user from your `$HOME` directory
 
-- configure [password-less sudo](https://blog.pgedge.org/index.php/2023/04/07/passwordless-sudo/) for easier testing of advanced commands
+- configure [password-less sudo](http://lussier.io/index.php/2023/04/07/passwordless-sudo/) for easier testing of advanced commands
 
-- set up [password-less ssh to localhost](https://blog.pgedge.org/index.php/2023/06/07/passwordless-ssh-to-localhost-2) for using `cluster local-create` commands
+- set up [password-less ssh to localhost](http://lussier.io/index.php/2023/06/07/passwordless-ssh-to-localhost-2) for using `cluster local-create` commands
 
 - Tested with Python 3.9+ 
   - Python 3.9 on EL8, EL9, SLE-15, & AWS Linux 2023 (on EL8 & SLES-15 you must install python39)
@@ -48,7 +48,7 @@ Create db *db1* owned by *denis* installing & configuring *pgedge* core componen
 ./ctl install pgedge -U denis -P secret -d db1 --pg 16
 ```
 
-If you first shut off SE-Linux, you can install & run pgEdge in AutoStart mode (using systemd) on a VM or Metal
+If you first [shut off SE-Linux](http://lussier.io/index.php/2023/04/07/passwordless-sudo/), you can install & run pgEdge in AutoStart mode (using systemd) on a VM or Metal
 
 ```
 ./ctl install pgedge -U denis -P secret -d dbauto --pg 15 --autostart
