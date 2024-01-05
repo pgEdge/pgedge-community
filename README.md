@@ -29,9 +29,7 @@ python3 -c "$(curl -fsSL https://pgedge-upstream.s3.amazonaws.com/REPO/install.p
 
 - Learn about running [pgEdge Platform](https://www.pgedge.com/products/pgedge-platform) in production and/or for professional grade support
 
-- Denis' [Linux Cheatsheet](https://blog.pgedge.org)
-
-- pgedge [Community License](https://www.pgedge.com/communitylicense>pgEdge Community License 1.0)
+- pgedge [Community License](https://www.pgedge.com/communitylicense>pgEdge Community License)
 
 
 
@@ -48,7 +46,7 @@ Create db *db1* owned by *denis* installing & configuring *pgedge* core componen
 ./ctl install pgedge -U denis -P secret -d db1 --pg 16
 ```
 
-If you first [shut off SE-Linux](http://lussier.io/index.php/2023/04/07/passwordless-sudo/), you can install & run pgEdge in AutoStart mode (using systemd) on a VM or Metal
+If you first [Disable SELinux](http://lussier.io/index.php/2023/04/14/disabling-selinux-on-el7-el8-el9/), you can install & run pgEdge in AutoStart mode (using systemd) on a VM or Metal
 
 ```
 ./ctl install pgedge -U denis -P secret -d dbauto --pg 15 --autostart
